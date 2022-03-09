@@ -1,0 +1,63 @@
+Photon {
+    num 10000
+}
+
+PerspectiveCamera {
+    center 0 5 0
+    direction 0 -1 0
+    up 0 0 1
+    angle 45
+    width 512
+    height 512
+}
+
+Lights {
+    numLights 1
+    PointLight {
+        position 2 4 4
+        color 1 1 1
+    }
+}
+
+Background {
+    color 1 0.549 0
+}
+
+Materials {
+    numMaterials 3
+    Material { Color 0.7 0.7 0.7
+        ttype 0
+        type 0
+    }
+    Material { Color 0.4 0.6 0.4
+        type 0
+    }
+    Material {
+        texture textures/scene06.bmp
+    }
+}
+
+Group {
+    numObjects 2
+    MaterialIndex 1
+    Transform {
+        Translate 0 2 0
+        UniformScale 1
+        ZRotate 270
+        TriangleMesh {
+            obj_file mesh/horse.fine.90k.obj
+        }
+    }
+    MaterialIndex 0
+    Transform {
+        Translate -15 15 -1
+        XRotate 90
+        UniformScale 30
+        XRotate 90
+        TriangleMesh {
+            obj_file mesh/wall.obj
+        }
+    }
+    
+}
+

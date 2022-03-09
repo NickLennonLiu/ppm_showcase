@@ -1,0 +1,111 @@
+
+Photon {
+    num 100
+}
+
+PerspectiveCamera {
+    center 0 0 -2.5
+    direction 1 1 0.15
+    up 0 0 1
+    angle 25
+    width 1024
+    height 768
+}
+
+Lights {
+    numLights 1
+    PointLight {
+        position 3 3 2
+	    color 0.7 0.7 0.7
+    }
+}
+
+Background {
+    color 0.1 0.7 0.2
+}
+
+Materials {
+    numMaterials 5
+    Material { Color 0.2 0.3 0.8
+        type 1
+    }
+    Material { Color 0.45 0.5 0.45
+        type 0
+    }
+    Material { Color 0.1 0.3 0.7
+        type 0
+    }
+    Material { Color 0.7 0.7 0.7
+        type 1
+    }
+    Material { Color 0.7 0.1 0.3
+        type 2
+    } 
+}
+
+Group {
+    numObjects 10
+
+    MaterialIndex 0
+    Transform {
+        Translate 1 1 -5
+		UniformScale 8
+        XRotate 90
+        YRotate 180
+        TriangleMesh {
+            obj_file mesh/bunny_1k.obj
+        }
+    }
+
+    MaterialIndex 3
+    Sphere {
+        center 3 3 -2
+        radius 0.9
+    }
+
+    MaterialIndex 2
+    Sphere {
+        center 3.5 -3 3
+        radius 3
+    }
+
+    MaterialIndex 4
+    Sphere {
+        center -3 3.5 3
+        radius 3
+    }
+
+    MaterialIndex 1
+    Sphere {
+        center -100 0 0
+        radius 95
+    }
+    MaterialIndex 1
+    Sphere {
+        center 100 0 0
+        radius 95
+    }
+
+    MaterialIndex 1
+    Sphere {
+        center 0 -100 0
+        radius 95
+    }
+    MaterialIndex 1
+    Sphere {
+        center 0 100 0
+        radius 95
+    }
+
+    MaterialIndex 1
+    Sphere {
+        center 0 0 -100
+        radius 95
+    }
+    MaterialIndex 1
+    Sphere {
+        center 0 0 100 
+        radius 95
+    }
+
+}

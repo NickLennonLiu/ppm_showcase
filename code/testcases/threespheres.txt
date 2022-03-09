@@ -1,0 +1,122 @@
+Photon {
+    num 10000
+}
+
+PerspectiveCamera {
+    center 5 7 4
+    direction 0 -1 -0.8
+    up 0 0 1
+    angle 50
+    width 1024
+    height 1024
+}
+
+Lights {
+    numLights 3
+    DirectionalLight {
+        direction -1 1 -0.5
+        position 13 -4 0
+        axis1 -5 -5 0
+        axis2 0 0 5
+        color 1 0.6 0.6
+        flux 120
+    }
+    AreaLight {
+        position 5 5 5
+        axis1 0 -1 0.5 
+        axis2 -1 0 0
+        color 0.5 0.5 0.5
+        flux 200
+    }
+    PointLight {
+        position 5 8 10
+        color 1 1 1
+        flux 200
+    }
+}
+
+Background {
+    color 0.3 0.5 0.8
+}
+
+Materials {
+    numMaterials 7
+    Material {
+        Color 0.63 0.63 0.63
+        type 0
+        ttype 0
+    }
+    Material {
+        Color 0.3 0.3 0.3
+        type 0
+        ttype 0    
+    }
+    Material {
+        Color 0.8 0.8 0.8
+        type 1
+    }
+    Material {
+        Color 0.6 0.6 0.6
+        ttype 4
+        type 2
+    }
+    Material {
+        Color 0.050 0.376 0.807
+        ttype 2
+        type 0
+    }
+    Material {
+        texture textures/painting.bmp
+    }
+    Material {
+        Color 0.8 0.4 0.4
+        type 0
+    }
+}
+
+Group {
+    numObjects 6
+    MaterialIndex 6
+    Transform {
+        Translate 5 12 -3
+        UniformScale 40
+        YRotate 90
+        XRotate 90
+        ZRotate 90
+        TriangleMesh {
+            obj_file mesh/bunny_1k.obj
+        }
+    }
+    MaterialIndex 1
+    Transform {
+        Translate -15 -15 -0.1
+        UniformScale 30
+        TriangleMesh {
+            obj_file mesh/wall.obj
+        }
+    }
+    MaterialIndex 5
+    Transform {
+        Translate 7 3 0.1
+        Scale 4 3 1
+        ZRotate 80
+        TriangleMesh {
+            obj_file mesh/wall.obj
+        }
+    }
+    MaterialIndex 2
+    Sphere {
+        center 5 0 1
+        radius 1
+    }
+    MaterialIndex 3
+    Sphere {
+        center 7.5 0 1
+        radius 1
+    }
+    MaterialIndex 4
+    Sphere {
+        center 2.5 0 1
+        radius 1
+    }
+}

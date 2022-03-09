@@ -1,0 +1,76 @@
+Photon {
+    num 500
+}
+
+PerspectiveCamera {
+    center 0 5 3
+    direction 0 -1 -0.8
+    up 0 0 1
+    angle 90
+    width 1024
+    height 1024
+}
+
+Lights {
+    numLights 2
+    PointLight {
+        position -4 1 1
+        color 0.5 0.96 0.5
+        flux 50
+    }
+    AreaLight {
+        position 5 3 1
+        axis1 0.5 -0.5 0
+        axis2 0 0 0.5
+        color 0.956 0.5 0.5
+        flux 50
+    }
+}
+
+Background {
+    color 0.01 0.02 0.04
+}
+
+Materials {
+    numMaterials 2
+    Material {
+	  Color 0.129 0.721 0.992
+      ttype 0
+	  type 2
+	}
+    Material {
+        Color 0.8 0.8 0.8
+        ttype 0
+        type 0
+    }
+}
+
+Group {
+    numObjects 3
+    MaterialIndex 1
+    Sphere {
+        center 0 0 -1000
+        radius 997.8
+    }
+    MaterialIndex 1
+    TriangleMesh {
+        obj_file mesh/corner.obj
+    }
+    MaterialIndex 0
+    Transform {
+        Translate 0 -3 0
+        UniformScale 1.2
+        XRotate 90
+        YRotate 10
+        RevSurface {
+            profile BezierCurve {
+                controls
+                    [ -1 2 0 ]
+                    [ 0 0 0 ]
+                    [ -2 0 0 ]
+                    [ -1 -2 0 ]
+            }
+        }
+    }
+}
+
